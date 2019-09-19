@@ -1,0 +1,91 @@
+img{
+  width: 130px;
+  height: auto;
+  padding-left:450px;
+}
+
+h1{
+  text-align:center;
+color:blue;
+margin-top:-100px;
+margin-right: 200px;
+text-shadow:-15px -10px 2px #CE5937
+;
+}
+
+
+address{
+  text-align: center;
+  color: black;
+  margin-left:200px;
+  font-size: 20px;
+
+}
+.city table, th,td {
+border: 1px solid black;
+margin-top: 30px;text-align: center;
+}
+.sun table,th,td{
+  border: 1px solid black;
+  margin-top: 20px;
+  text-align: center;
+}
+.mon table,th,td{
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+
+}
+.city th{
+  color:black;
+  font-size: 20px;
+  background-color:#f3ff12;
+}
+.city td{
+  background-color:white;
+
+}
+.sun th{
+  color:white;
+  background-color: black;
+}
+.sun tr:nth-child(even) {
+  background-color: #eee;
+  }
+.sun tr:nth-child(odd) {
+  background-color: #fff;
+}
+.mon th{
+  color:green;
+  background-color: #149687;
+}
+.city table{
+  width: 20%;
+  height: 50%;
+}
+.sun table{
+  width:50%; height: 40%
+
+}
+.mon table{
+  border: 2px solid  #000066;
+  width: 20% ;height: 30%;
+  color:black;
+}
+a:active{
+  color:blue;
+}
+.right{
+margin-right :350px;
+font-size: 20px;
+}
+button {s
+align:center;
+}
+input{
+  text-align: center;
+  color: blue;
+}
+.bb{
+  margin-left: 50%;
+}

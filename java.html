@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="java.css">
+    <script src="C:\Users\DELL\Documents\ashish\jquery\jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    $("#btn1").click(function(){
+      $(".color").css("background","red");
+      var ans = Number($("#one").val()) Number($("#two").val());
+      $("#ans").val(ans);
+      $("#sum").html("+").attr('style', 'color: black');
+    });
+    $("#btn2").click(function(){
+      $(".color").css("background","darkblue");
+      var ans = Number($("#one").val()) - Number($("#two").val());
+      $("#ans").val(ans);
+      $("#sum").html("-").attr('style', 'color: blue');
+    });
+    $("#btn3").click(function(){
+        $(".color").css("background","yellow");
+      var ans=Number($("#one").val()) * Number($("#two").val());
+      $("#ans").val(ans);
+      $("#sum").html("*").attr('style', 'color:red');
+
+    });
+    $("#btn4").click(function(){
+      $(".color").css("background","pink");
+      var ans=Number($("#one").val()) / Number($("#two").val());
+      $("#ans").val(ans);
+      $("#sum").html("/").attr('style', 'color:red');
+       });
+     });
+    </script>
+  </head>
+  <body class="color">
+    <input type="text" name=""  id="one"value="">
+    <p id="sum"></p>
+    <input type="text" name="" id="two" value="">
+    <br><br>
+    <button id="btn1">Add (+)</button>
+    <button id="btn2">sub (-)</button>
+    <button id="btn3">mult (*)</button>
+    <button id="btn4">divi (/)</button><br><br>
+    Ans:<input type="text" name="" id="ans" value="">
+  </body>
+</html>

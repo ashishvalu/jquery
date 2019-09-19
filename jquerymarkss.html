@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+      <link rel="stylesheet" href="jquerymarkss.css">
+   </head>
+  <body>
+    <style>
+    .color{
+      color: red;
+      background-color:pink;
+
+    }
+    </style>
+    <img src="file:///C:/Users/DELL/Documents/ashish/image/alpha.jpg" alt="alpha school"><br>
+    <h1 align="center">Alpha Vidhiya Sankul</h1>
+    <address class="" align="">
+        <b>
+        Junagadh Rajkot Highway, Between
+        Sukhpur Vadal, Junagadh, 362001 - Gujarat..
+        </b>
+    </address>
+    <br><br>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+      $(".intel").css("color","#424bf5")
+      $(document).ready(function(){
+      $("button").click(function(){
+      $("h1,address,body").addClass("color");
+     });
+     });
+      var row_no= 0;
+      function summary() {
+        var totals = $('.student_total');
+         $('#total').html(totals.length);
+             // Total Student
+        var max = 0,min = 500, avg = 0, total = 0, sum =0;
+        for (var i = 0; i < totals.length; i++) {
+          sum = Number(totals[i].innerHTML);
+          if (sum > max)
+            max = sum;
+          if (sum < min)
+            min = sum;
+          total = total + sum;
+        }
+      // Highest, Lowest & Average
+        $("#highest").html(max);
+        if(totals.length > 0) {
+          avg = total / totals.length;
+         $("#lowest").html(min);
+        }else {
+        $("#lowest").html('0');
+        }
+        $("#average").html(avg);
+      }
+
+      $(document).ready(function(){
+      $("#addrow").click(function(){
+      $(".tr1").addClass("color","red")
+      $("#mytable").append('<tr class="tr1" id="student' + row_no + '"><td><input type="text" value=""></td>' +
+                         '<td> <input type="text" name="" value=""> </td>'+
+                         '<td><input type="text" class="sub' + row_no + '" id="eng'+ row_no +'" data-id="' + row_no + '"></td>'+
+                         '<td><input type="text" class="sub' + row_no + '" id="mth'+ row_no +'" data-id="' + row_no + '"></td>'+
+                         '<td><input type="text" class="sub' + row_no + '" id="eco'+ row_no +'" data-id="' + row_no + '"></td>'+
+                         '<td id="tot'+ row_no +'" class= "student_total"></td>'+
+                         '<td id="per'+ row_no +'"></td>' +
+                         '<td><button type="button" id="deleterow' + row_no + '" data-id="' + row_no + '">delete</button></td></tr>') ;
+      $(".sub" + row_no).keyup(function(){
+        var id = $(this).attr('data-id');
+        var eng = $("#eng" + id).val();
+        var mth = $("#mth" + id).val();
+        var eco = $("#eco" + id).val();
+        var result = Number(eng) + Number(mth) + Number(eco);
+        var percent = result / 3;
+        $('#per' + id).html(percent);
+        $('#tot' + id).html(result);
+        summary();
+      });
+
+      $("#deleterow" + row_no).click(function(){
+        var id = $(this).attr('data-id');
+      $("#student" + id).remove();
+      summary();
+      });
+      row_no += 1;
+
+      summary();
+       });
+
+      });
+
+    </script>
+
+
+    <div class="city" >
+      <table align="center">
+        <tr>
+          <th>std:12 <sup>th</sup></th>
+          <th>division:A</th>
+        </tr>
+        <tr>
+          <td>Teacher Name:Sagar patel</td>
+          <td>Exam Name:hSC board</td>
+        </tr>
+      </table>
+    </div>
+    <div class="sun">
+      <table id="mytable" align="center">
+        <tr class="intel">
+          <th>RollNo</th>
+          <th>Name</th>
+          <th>English</th>
+          <th>Maths</th>
+          <th>Economices</th>
+          <th>Total</th>
+          <th>Persentage</th>
+          <th>delete<th>
+
+        </tr>
+      </table>
+      <button class="bb" type="button" id="addrow">addrow</button>
+    </div>
+
+    <h4 align="center">Exam summary</h4>
+    <div class="mon">
+      <table align="center">
+        <tr>
+          <th>Total students</th>
+          <th id="total">0</th>
+        </tr>
+        <tr>
+
+          <td>highest</td>
+          <td id="highest">0</td>
+        </tr>
+        <tr>
+          <td>avarege</td>
+          <td id="average">0</td>
+        </tr>
+        <tr>
+          <td>lowest</td>
+          <td id="lowest">0</td>
+        </tr>
+      </table>
+    </div>
+    <div align="right" class="right">
+
+    </div>
+  </body>
+</html>
